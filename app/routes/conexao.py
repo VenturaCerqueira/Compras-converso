@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 from app.database import get_connection
-from app.schemas import Entidade, UnidadeItem, Fornecedor, Item, Licitacao, Contrato
+from app.schemas import Entidade, UnidadeItem, Fornecedor, Item, Licitacao, Contrato, ContratoItem
 from typing import List
 
 router = APIRouter()
@@ -71,6 +71,18 @@ def get_contratos(fk_licitacao: int = Query(..., description="ID da Licitação 
         conn = get_connection()
         with conn.cursor() as cursor:
             cursor.execute("Select * from contrato where fk_licitacao = %s", (fk_licitacao))
+            return cursor.fetchall()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro: {e}")
+    finally:
+        conn.close() 
+        
+@router.get("/ContratoItem", response_model=List[ContratoItem])
+def get_ContratoItem(fk_contrato: int = Query(..., description="ID do contrato consultar em /contrato")):
+    try:
+        conn = get_connection()
+        with conn.cursor() as cursor:
+            cursor.execute("Select * from contrato_item where fk_contrato = %s", (fk_contrato))
             return cursor.fetchall()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro: {e}")

@@ -52,3 +52,11 @@ class Contrato(BaseModel):
     DATA_ADITIVADA: Optional[date] = None
     VALOR_TOTAL: Optional[condecimal(max_digits=10, decimal_places=3)] = None
     
+class ContratoItem(BaseModel):
+    ID: Optional[int]
+    FK_ITEM: int
+    FK_CONTRATO: int
+    QUANTIDADE_TOTAL: Optional[condecimal(max_digits=10, decimal_places=3)] = None
+    QUANTIDADE_ENTREGUE: Optional[condecimal(max_digits=10, decimal_places=3)] = None
+    VALOR_UNITARIO: Optional[condecimal(max_digits=10, decimal_places=3)] = None
+    VALOR_TOTAL: Optional[condecimal(max_digits=10, decimal_places=3)] = None
