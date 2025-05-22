@@ -29,19 +29,19 @@ A aplicação é modular, extensível e pronta para produção, integrando scrap
 ---
 
 ## 📁 Estrutura do Projeto
-Compras-converso/
-├── app/
-│ ├── main.py # Entrada principal da aplicação
-│ ├── models/ # Modelos SQLAlchemy
-│ ├── schemas/ # Esquemas Pydantic
-│ ├── routes/ # Rotas FastAPI
-│ ├── services/ # Lógica de negócio
-│ ├── database.py # Conexão com o banco
-│ └── utils/ # Funções auxiliares
-├── .env # Variáveis de ambiente
-├── .gitignore # Arquivos ignorados pelo Git
-├── requirements.txt # Dependências do projeto
-└── README.md
+Compras-converso/<br>
+├── app/ <br>
+│ ├── main.py # Entrada principal da aplicação<br>
+│ ├── models/ # Modelos SQLAlchemy<br>
+│ ├── schemas/ # Esquemas Pydantic<br>
+│ ├── routes/ # Rotas FastAPI<br>
+│ ├── services/ # Lógica de negócio<br>
+│ ├── database.py # Conexão com o banco<br>
+│ └── utils/ # Funções auxiliares<br>
+├── .env # Variáveis de ambiente<br>
+├── .gitignore # Arquivos ignorados pelo Git<br>
+├── requirements.txt # Dependências do projeto<br>
+└── README.md<br>
 
 
 ---
